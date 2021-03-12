@@ -1,0 +1,57 @@
+@import "_variables.scss";
+
+.full{
+  background-image: url("https://images.unsplash.com/photo-1493770348161-369560ae357d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  height: 100vh;
+  p{
+    text-align: left;
+    margin:2%;
+  }
+  .message{
+    padding:20px;
+    width: 50%;
+  }
+  .content{
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .pop{
+    height: 20%;
+  }
+  .main-desc{
+    text-align: center;
+    p{
+      text-align: center;
+    }
+    a{
+      border:2px solid white;
+      width: 30%;
+      padding: 5px;
+      margin:1%;
+      &:hover{
+        background-color: white;
+        color:$dark;
+      }
+    }
+  }
+  aside{
+    a{
+      color: white;
+    }
+  }
+}
+
+main{
+  article{
+    margin-left: auto;
+  }
+}
+
+
+.head{
+  text-decoration: underline;
+  color: white;
+}

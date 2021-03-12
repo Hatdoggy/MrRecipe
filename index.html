@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>ApiTest</title>
+    <link rel="stylesheet" href="./css/styles.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+  <body>
+    <header class="nav-head">
+      <div class="logo">
+        <h4>Mr.Recipe</h4>
+      </div>
+
+      <nav>
+        <ul>
+           <li><a href="#" class="active navi">Home</a></li>
+           <li><a href="recipelist.html" class="navi">Recipes</a></li>
+           <li><a href="tipslist.html"  class="navi">Tips</a></li>
+           <li class="burg">
+             <div class="unhide">
+                <li><a class=" burger"><i class="fa fa-bars burger "></i></a></li>
+              <div class=" align-r dropContent">
+                <li><a href="#" class="active ">Home</a></li>
+                <li><a href="recipelist.html" class="">Recipes</a></li>
+                <li><a href="tipslist.html"  class="">Tips</a></li>
+                <li><a href="https://www.facebook.com/rey.ondap.77"><i class="fa fa-facebook-square"></i></a>
+                    <a href="https://www.instagram.com/onda_plor/"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/rey-louis-ondap-7282991ba"><i class="fa fa-linkedin"></i></a></li>
+              </div>
+
+             </div>
+           </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="welcome">
+      <h4 data-aos="zoom-in">What can you find here?</h4>
+      <p data-aos="zoom-in">Explore a number of recipes from the mealDB database and Learn
+         how to cook them. Increase your knowledge in cooking with some tips also
+       found in this website. <br />Have fun Cooking!</p>
+    </div>
+
+    <main>
+
+
+      <section class="recipes flex">
+
+        <header class="title" data-aos="fade-left">
+            <h3>Featured Recipes</h3>
+            <p>Learn different recipes from the mealDB from different countries with different categories</p>
+            <h5 class="view"><a href="recipelist.html">View more recipes<i class="fa fa-arrow-right" aria-hidden="true"></i></a></h5>
+        </header>
+
+        <article class="flex  container">
+
+        </article>
+
+      </section>
+
+    </main>
+
+    <section class="tips tips-bg1 flex flex-jc-ce ">
+
+      <div class="flex flex-ai-ce flex-jc-ce w-50 backG" >
+        <section class="flex flex-jc-ce text-wht flex-ai-ce flex-flx-col" data-aos="flip-left">
+          <h3 class="align-c ">Cooking Tips</h3>
+          <p class="align-c w-80">Increase your knowledege in cooking and learn different
+             cooking tips from different chefs and cooks and other professionals
+             in the field.</p>
+          <a href="tipslist.html" class="btn btn-bg-tp">View Tips page</a>
+        </section>
+      </div>
+
+    </section>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <section class="main-desc flex flex-flx-col flex-jc-e">
+          <header class="flex w-100">
+            <h1 id="name">Name of Recipe</h1>
+            <p class="close">&times;</p>
+          </header>
+        </section>
+
+        <article class="ingredients flex flex-flx-col">
+          <h4 class="head" id="ingredients">Ingredients</h4>
+          <div class="flex">
+            <div class="flex flex-flx-col ingredient">
+
+            </div>
+            <div class="flex flex-flx-col measurement">
+
+            </div>
+          </div>
+        </article>
+
+        <article class="procedure flex flex-flx-col">
+          <h4 class="head" >Procedure</h4>
+          <p id="procedure"></p>
+        </article>
+
+        <article class="procedure flex flex-flx-col">
+          <h4 class="head" >Youtube Link and Source</h4>
+          <a id="yt" href="" class="links">Youtube Link</a>
+          <a id="source" href="" class="links">Recipe Source</a>
+        </article>
+      </div>
+
+    </div>
+
+    <aside>
+      <div class="side-content flex flex-jc-e flex-flx-col">
+        <a href="https://www.facebook.com/rey.ondap.77"><i class="fa fa-facebook-square"></i></a>
+        <a href="https://www.instagram.com/onda_plor/"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/rey-louis-ondap-7282991ba"><i class="fa fa-linkedin"></i></a>
+      </div>
+    </aside>
+
+    <script type="text/javascript" src="./js/var.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+
+  </body>
+</html>
