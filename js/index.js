@@ -60,23 +60,26 @@ $(".dropContent").slideToggle("fast");
 return false;
 });
 
+
+// window.screen.width
+
 const display = (elem)=>{
   let id= elem.strMeal.split(" ");
-
+  let mobile = window.screen.width;
   id.length>1?id=id[0].concat("-"+id[1]):id=id[0];
   let shortIns = elem.strInstructions.substring(0,80);
   let img = elem.strMealThumb;
 
     testing.after(`
-              <div class="recipe-card ${elem.strCategory} clickme" id=${id} data-aos="zoom-in-left">
-                <img src="${img}" id=${id} alt="${elem.strMeal}" />
-                <div class="text" id=${id}>
-                  <h5 id=${id}>${elem.strMeal}</h5>
-                  <div class="desc" id=${id}>
-                    <p id=${id}>${shortIns} ...</p>
-                  </div>
-                </div>
+      <div class="recipe-card ${elem.strCategory} clickme" id=${id} data-aos=${mobile<=480?"fade-up":"zoom-in-left"}>
+        <img src="${img}" id=${id} alt="${elem.strMeal}" />
+          <div class="text" id=${id}>
+            <h5 id=${id}>${elem.strMeal}</h5>
+              <div class="desc" id=${id}>
+                <p id=${id}>${shortIns} ...</p>
               </div>
+          </div>
+      </div>
     `);
 };
 
@@ -84,11 +87,12 @@ $("#filter").click(()=>display);
 
 const preview = (elem)=>{
   let id= elem.strMeal.split(" ");
+  let mobile = window.screen.width;
   id.length>1?id=id[0].concat("-"+id[1]):id=id[0];
   let shortIns = elem.strInstructions.substring(0,80);
   let img = elem.strMealThumb;
     container.append(`
-          <div class="recipe-card clickme" id="${id}" data-aos="fade-left">
+          <div class="recipe-card clickme" id="${id}" data-aos=${mobile<=480?"fade-up":"zoom-in-left"}>
             <img src="${img}" id=${id} alt="${elem.strMeal}" />
             <div class="text" id=${id}>
               <h5 id=${id}>${elem.strMeal}</h5>
@@ -108,11 +112,12 @@ const unique = (array)=>{
   $(".sortCont").append(`
     <li><p><a class="sort" id="reset">Reset</a></p></li>
   `);
-  uniqueArray.map((x)=>{
+  uniqueArray.forEach((x, i) => {
     $(".sortCont").append(`
       <li><p><a class="sort" id="${x}">${x}</a></p></li>
   `);
   });
+
 }
 
 const timeout = async ms => new Promise(res => setTimeout(res, ms));
@@ -244,7 +249,7 @@ const newId = (old)=>{
   $("p.close").click (()=>{
     let ingredients = $(".ingredient");
     let procedure = $(".measurement");
-    // procedure.children().empty();
+
     modal.css("display","none");
   });
 
@@ -252,8 +257,9 @@ const newId = (old)=>{
     let found = menu.filter((x)=>{
       return x.strCategory === cat;
     });
-    if(found.length >0){
+
       testing.siblings().length > 0&&testing.siblings().empty();
+    if(found.length >0){//displays food that satisfies the category set
       found.map((x)=>{
         display(x);
           $(".clickme").click((event)=>{
@@ -264,7 +270,7 @@ const newId = (old)=>{
             displayRecipe(data[0]);
           });
       });
-    }else{
+    }else{//resets list of menus and displays it
       menu.map(function(x){
         display(x);
           $(".clickme").click((event)=>{
