@@ -27,14 +27,6 @@ const addHover = ()=>{
           width: '100%',
           color:'pink',
           },'slow');
-        },
-      function () {
-        $(this).children().animate({
-          width: '100%',
-          },'slow');
-        $(this).animate({
-          width: '30%',
-          });
         }
     );
 }
@@ -56,9 +48,11 @@ $(window).resize(()=>{
   $(".sortCont").slideUp("fast");
   $(".dropContent").slideUp("fast");
 });
+let dropped = false;
 
 $(".burger").click(function(){
 $(".dropContent").slideToggle("fast");
+dropped = true;
 return false;
 });
 
@@ -309,6 +303,8 @@ const newId = (old)=>{
     if(event.target==modal[0]){
       modal.css("display","none");
       console.log(modal);
+    }else if(dropped){
+      $(".dropContent").slideUp("fast");
     }
   });
 
