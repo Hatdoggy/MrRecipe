@@ -53,6 +53,8 @@ if($(window).width()>800){
 
 $(window).resize(()=>{
   $(window).width()>800?addHover():mobile();
+  $(".sortCont").slideUp("fast");
+  $(".dropContent").slideUp("fast");
 });
 
 $(".burger").click(function(){
@@ -306,6 +308,7 @@ const newId = (old)=>{
   $(window).click((event)=>{
     if(event.target==modal[0]){
       modal.css("display","none");
+      console.log(modal);
     }
   });
 

@@ -1,11 +1,9 @@
 @import "_variables.scss";
 
 @media screen and (max-width: 800px) {
+
   .tip{
     width: 100%!important;
-  }
-  .dropFilt{
-    display: block;
   }
   nav{
     margin-right: 8%;
@@ -13,10 +11,7 @@
   .navi{
     display: none;
   }
-  .burg{
-    display: block!important;
-  }
-  .burger,#filter{
+  .burger,#filter,.dropFilt,.botFilt,.burg{
     display: block!important;
   }
   .welcome{
@@ -34,13 +29,19 @@
       text-align: center;
     }
     .container{
-      flex-direction: column;
+      flex-wrap: wrap!important;
+      justify-content: center;
       align-items: center;
       width: 100%;
       .recipe-card{
-        width: 80%;
+        width: 250px!important;
         margin-bottom: 5%;
-        margin-left: 0;
+        margin-left: 15px!important;
+        img{
+          width: 100%!important;
+          height: 100%!important;
+          object-fit: cover;
+        }
       }
     }
   }
@@ -59,8 +60,8 @@
   }
 
   .grid-gap{
-    grid-row-gap: 1%!important;
-    grid-column-gap: 0;
+    grid-row-gap: 20px!important;
+    grid-column-gap: 20px!important;
   }
   aside{
     display: none;
@@ -68,6 +69,15 @@
 
   .desc{
     width: 52%;
+  }
+}
+
+@media (min-width:480px) and (max-width:800px) {
+  nav{
+    margin-right: 5%!important;
+    .dropContent,.filtCat,.sortCont{
+      right: 4%!important;
+    }
   }
 }
 

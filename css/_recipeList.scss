@@ -10,8 +10,10 @@
     .title-recipe{
       display: flex;
       padding-left: 11%;
+      align-items: center;
       h1{
         width: 50%;
+        height: 35%;
         font-size: 50px;
         border-left: 5px solid $main;
         padding-left: 3%;
